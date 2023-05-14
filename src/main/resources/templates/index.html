@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="main_layout.html">
            <div layout:fragment="siteContent">
-            <table class="table table-striped">
+            <table class="table ">
                 <thead>
                 <tr>
                     <th>ID</th>
@@ -13,7 +13,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="muz :${musics}">
+<!--                <tr th:each="muz :${musics}" th:style="${muz.duaration>=180?'color: green': 'color: red;'}">-->
+<!--                <tr th:each="muz :${musics}" th:class="${muz.duaration>=180?'text-danger': 'text-secondary'}">-->
+                    <tr th:each="muz :${musics}" th:class="${muz.duaration<=200?'text-primary': 'text-danger'}">
+
                     <td th:text="${muz.id}"></td>
                     <td th:text="${muz.name}"></td>
                     <td th:text="${muz.author}"></td>
