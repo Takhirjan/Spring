@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:insert="head.html">
+</head>
+<body>
+<div class="container-fluid">
+    <div th:insert="navbar.html"></div>
+</div>
+<div class="container mt-5">
+    <div class="row bg-info p-5">
+        <div class="col-12">
+            <h4 class="text-center">
+                welcome to our site
+            </h4>
+        </div>
+    </div>
+</div>
+<div class="container mt-5" style="min-height: 400px">
+    <div class="row">
+        <div class="col-3" th:insert="sidebar.html">
+        </div>
+        <div class="col-9">
+            <div layout:fragment="siteContent"></div>
+        </div>
+    </div>
+</div>
+<div th:insert="footer.html">
+</div>
+<!--<a href="/about">Go to about</a>-->
+<!--<h1>Hello Spring Boot</h1>-->
+
+<!--<form action="/add-music" method="post">-->
+<!--    Name: <input type="text" name="name">-->
+<!--    Author: <input type="text" name="author">-->
+<!--    Duration: <input type="number" name="duaration">-->
+<!--    <button>Add music</button>-->
+<!--</form>-->
+<!--<form action="/add-music-v2" method="post">-->
+<!--    Name: <input type="text" name="music-name">-->
+<!--    Author: <input type="text" name="music-author">-->
+<!--    Duration: <input type="number" name="music-duaration">-->
+<!--    <button>Add music</button>-->
+<!--</form>-->
+<!--<h3 th:each="muz : ${musics}">-->
+<!--<span th:text="${muz.id}"></span> - -->
+<!--    <span th:text="${muz.name}"></span> by-->
+<!--    <span th:text="${muz.author}"></span> with duration :-->
+<!--    <span th:text="${muz.duaration}"></span> sec-->
+
+
+
+<!--</h3>-->
+
+</body>
+</html>

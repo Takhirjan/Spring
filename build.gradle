@@ -21,10 +21,8 @@ repositories {
 dependencies {
 	implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.33'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation group: 'org.thymeleaf', name: 'thymeleaf', version: '3.1.1.RELEASE'
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '3.0.6'
-
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '3.2.1'
 	implementation 'org.jetbrains:annotations:20.1.0'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
