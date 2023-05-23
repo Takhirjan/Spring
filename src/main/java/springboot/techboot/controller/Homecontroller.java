@@ -1,6 +1,7 @@
 package springboot.techboot.controller;
 
 import org.jetbrains.annotations.NotNull;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,15 +9,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import springboot.techboot.DB.Music;
+import springboot.techboot.dbconnect.MusicManager;
 
 import java.util.ArrayList;
 
 @Controller
 public class Homecontroller {
-
+@Autowired
+  MusicManager musicManager;
   @GetMapping(value = "/") // @WebServlet(value = "/") + doGet()
   public String indexPage(Model model) {
-    ArrayList<Music> musicArray = DBManager.getMusics();
+    ArrayList<Music> musicArray = musicManager.getMusicList();
     model.addAttribute("musics", musicArray);
     // request.setAttribute("muzikalar", musicArray);
     return "index"; // request.getRequestDispatchet("/index.html").forward(request, response);
@@ -29,7 +32,7 @@ public class Homecontroller {
 
   @PostMapping(value = "/add-music")
   public String addMusic(Music music) {
-    DBManager.addMusic(music);
+  musicManager.addMusics(music);
     return "redirect:/";
   }
 
